@@ -1,0 +1,967 @@
+[
+  {
+    "options": [
+      {
+        "type": 1,
+        "name": "item",
+        "description": "Add item quantity to a player.",
+        "options": [
+          {
+            "name": "user",
+            "description": "Target user",
+            "required": true,
+            "type": 6
+          },
+          {
+            "type": 3,
+            "name": "item",
+            "description": "Item name",
+            "required": true
+          },
+          {
+            "max_value": 9999,
+            "min_value": 1,
+            "type": 4,
+            "name": "amount",
+            "description": "Amount",
+            "required": false
+          }
+        ]
+      },
+      {
+        "type": 1,
+        "name": "weapon",
+        "description": "Add weapon quantity to a player inventory.",
+        "options": [
+          {
+            "name": "user",
+            "description": "Target user",
+            "required": true,
+            "type": 6
+          },
+          {
+            "type": 3,
+            "name": "weapon",
+            "description": "Weapon name",
+            "required": true
+          },
+          {
+            "max_value": 9999,
+            "min_value": 1,
+            "type": 4,
+            "name": "amount",
+            "description": "Amount",
+            "required": false
+          }
+        ]
+      },
+      {
+        "type": 1,
+        "name": "skill",
+        "description": "Add a skill to a player.",
+        "options": [
+          {
+            "name": "user",
+            "description": "Target user",
+            "required": true,
+            "type": 6
+          },
+          {
+            "type": 3,
+            "name": "skill",
+            "description": "Skill name",
+            "required": true
+          }
+        ]
+      },
+      {
+        "type": 1,
+        "name": "stat",
+        "description": "Add amount to a player stat.",
+        "options": [
+          {
+            "name": "user",
+            "description": "Target user",
+            "required": true,
+            "type": 6
+          },
+          {
+            "type": 3,
+            "choices": [
+              {
+                "name": "gold",
+                "value": "gold"
+              },
+              {
+                "name": "xp",
+                "value": "xp"
+              },
+              {
+                "name": "level",
+                "value": "level"
+              },
+              {
+                "name": "hp",
+                "value": "hp"
+              },
+              {
+                "name": "attack",
+                "value": "attack"
+              },
+              {
+                "name": "armor",
+                "value": "armor"
+              },
+              {
+                "name": "energy",
+                "value": "energy"
+              },
+              {
+                "name": "focus",
+                "value": "focus"
+              },
+              {
+                "name": "max_hp",
+                "value": "max_hp"
+              },
+              {
+                "name": "max_energy",
+                "value": "max_energy"
+              },
+              {
+                "name": "max_focus",
+                "value": "max_focus"
+              }
+            ],
+            "name": "stat",
+            "description": "Stat field",
+            "required": true
+          },
+          {
+            "max_value": 9999,
+            "min_value": 1,
+            "type": 4,
+            "name": "amount",
+            "description": "Amount to add",
+            "required": true
+          }
+        ]
+      },
+      {
+        "type": 1,
+        "name": "custom",
+        "description": "Set custom hp/energy/focus and max fields (0-9999).",
+        "options": [
+          {
+            "name": "user",
+            "description": "Target user",
+            "required": true,
+            "type": 6
+          },
+          {
+            "max_value": 9999,
+            "min_value": 0,
+            "type": 4,
+            "name": "hp",
+            "description": "Set current HP",
+            "required": false
+          },
+          {
+            "max_value": 9999,
+            "min_value": 0,
+            "type": 4,
+            "name": "max_hp",
+            "description": "Set max HP",
+            "required": false
+          },
+          {
+            "max_value": 9999,
+            "min_value": 0,
+            "type": 4,
+            "name": "energy",
+            "description": "Set current Energy",
+            "required": false
+          },
+          {
+            "max_value": 9999,
+            "min_value": 0,
+            "type": 4,
+            "name": "max_energy",
+            "description": "Set max Energy",
+            "required": false
+          },
+          {
+            "max_value": 9999,
+            "min_value": 0,
+            "type": 4,
+            "name": "focus",
+            "description": "Set current Focus",
+            "required": false
+          },
+          {
+            "max_value": 9999,
+            "min_value": 0,
+            "type": 4,
+            "name": "max_focus",
+            "description": "Set max Focus",
+            "required": false
+          },
+          {
+            "type": 3,
+            "name": "values",
+            "description": "Prefix mode helper: hp 500 maxhp 700 energy 6 ...",
+            "required": false
+          }
+        ]
+      }
+    ],
+    "name": "add",
+    "description": "Owner: add items/skills/stats or custom set hp/energy/focus.",
+    "type": 1
+  },
+  {
+    "options": [
+      {
+        "name": "user",
+        "description": "Player to remove",
+        "required": false,
+        "type": 6
+      }
+    ],
+    "name": "afk",
+    "description": "Kick a player for AFK or show the timer.",
+    "type": 1
+  },
+  {
+    "options": [
+      {
+        "type": 1,
+        "name": "story",
+        "description": "Show story pages.",
+        "options": [
+          {
+            "min_value": 1,
+            "type": 4,
+            "name": "page",
+            "description": "Page number (1-based).",
+            "required": false
+          }
+        ]
+      },
+      {
+        "type": 1,
+        "name": "levels",
+        "description": "List levels.",
+        "options": [
+          {
+            "min_value": 1,
+            "type": 4,
+            "name": "page",
+            "description": "Page number (1-based).",
+            "required": false
+          }
+        ]
+      },
+      {
+        "type": 1,
+        "name": "skills",
+        "description": "List skills.",
+        "options": [
+          {
+            "min_value": 1,
+            "type": 4,
+            "name": "page",
+            "description": "Page number (1-based).",
+            "required": false
+          }
+        ]
+      },
+      {
+        "type": 1,
+        "name": "bosses",
+        "description": "List bosses.",
+        "options": [
+          {
+            "min_value": 1,
+            "type": 4,
+            "name": "page",
+            "description": "Page number (1-based).",
+            "required": false
+          }
+        ]
+      },
+      {
+        "type": 1,
+        "name": "waves",
+        "description": "List waves.",
+        "options": [
+          {
+            "min_value": 1,
+            "type": 4,
+            "name": "page",
+            "description": "Page number (1-based).",
+            "required": false
+          }
+        ]
+      },
+      {
+        "type": 1,
+        "name": "other",
+        "description": "List other lore or notes.",
+        "options": [
+          {
+            "min_value": 1,
+            "type": 4,
+            "name": "page",
+            "description": "Page number (1-based).",
+            "required": false
+          }
+        ]
+      },
+      {
+        "type": 2,
+        "name": "play",
+        "description": "Play Ember Veil Survival.",
+        "options": [
+          {
+            "type": 1,
+            "name": "start",
+            "description": "Start a new survival run.",
+            "options": [
+              {
+                "type": 3,
+                "choices": [
+                  {
+                    "name": "easy",
+                    "value": "easy"
+                  },
+                  {
+                    "name": "normal",
+                    "value": "normal"
+                  },
+                  {
+                    "name": "hard",
+                    "value": "hard"
+                  },
+                  {
+                    "name": "nightmare",
+                    "value": "nightmare"
+                  }
+                ],
+                "name": "difficulty",
+                "description": "easy, normal, hard, nightmare",
+                "required": false
+              },
+              {
+                "type": 3,
+                "choices": [
+                  {
+                    "name": "campaign",
+                    "value": "campaign"
+                  },
+                  {
+                    "name": "endless",
+                    "value": "endless"
+                  }
+                ],
+                "name": "mode",
+                "description": "campaign or endless",
+                "required": false
+              }
+            ]
+          },
+          {
+            "type": 1,
+            "name": "join",
+            "description": "Join a leader party.",
+            "options": [
+              {
+                "name": "leader",
+                "description": "Party leader",
+                "required": true,
+                "type": 6
+              }
+            ]
+          },
+          {
+            "type": 1,
+            "name": "leave",
+            "description": "Leave your current party.",
+            "options": []
+          },
+          {
+            "type": 1,
+            "name": "party",
+            "description": "Show party status.",
+            "options": []
+          },
+          {
+            "type": 1,
+            "name": "status",
+            "description": "Show your character status.",
+            "options": []
+          },
+          {
+            "type": 1,
+            "name": "act",
+            "description": "Take your turn.",
+            "options": [
+              {
+                "type": 3,
+                "choices": [
+                  {
+                    "name": "attack",
+                    "value": "attack"
+                  },
+                  {
+                    "name": "skill",
+                    "value": "skill"
+                  },
+                  {
+                    "name": "item",
+                    "value": "item"
+                  },
+                  {
+                    "name": "defend",
+                    "value": "defend"
+                  },
+                  {
+                    "name": "focus",
+                    "value": "focus"
+                  },
+                  {
+                    "name": "pass",
+                    "value": "pass"
+                  }
+                ],
+                "name": "action",
+                "description": "attack, skill, defend, focus, pass",
+                "required": true
+              },
+              {
+                "type": 3,
+                "name": "skill",
+                "description": "Skill name or number for action=skill",
+                "required": false
+              },
+              {
+                "type": 3,
+                "name": "item",
+                "description": "Item name for action=item",
+                "required": false
+              },
+              {
+                "type": 4,
+                "name": "target",
+                "description": "Enemy target (1-based)",
+                "required": false
+              },
+              {
+                "name": "ally",
+                "description": "Ally target for heals/support",
+                "required": false,
+                "type": 6
+              }
+            ]
+          },
+          {
+            "type": 1,
+            "name": "skills",
+            "description": "List your unlocked skills.",
+            "options": []
+          },
+          {
+            "type": 1,
+            "name": "relics",
+            "description": "Show relic stash and equipped relics.",
+            "options": []
+          },
+          {
+            "type": 1,
+            "name": "equip",
+            "description": "Equip a relic from the stash.",
+            "options": [
+              {
+                "type": 3,
+                "name": "relic",
+                "description": "Relic name",
+                "required": true
+              }
+            ]
+          },
+          {
+            "type": 1,
+            "name": "unequip",
+            "description": "Unequip a relic to the stash.",
+            "options": [
+              {
+                "type": 3,
+                "name": "relic",
+                "description": "Relic name",
+                "required": true
+              }
+            ]
+          },
+          {
+            "type": 1,
+            "name": "log",
+            "description": "Show recent battle log.",
+            "options": [
+              {
+                "min_value": 1,
+                "type": 4,
+                "name": "page",
+                "description": "Page number (1-based)",
+                "required": false
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "name": "ambrosia",
+    "description": "Show lore and play Ember Veil Survival.",
+    "type": 1
+  },
+  {
+    "options": [
+      {
+        "name": "user",
+        "description": "User to view (optional)",
+        "required": false,
+        "type": 6
+      }
+    ],
+    "name": "balance",
+    "description": "Show gold balance.",
+    "type": 1
+  },
+  {
+    "options": [
+      {
+        "name": "user",
+        "description": "User to disable",
+        "required": true,
+        "type": 6
+      },
+      {
+        "type": 3,
+        "name": "reason",
+        "description": "Optional reason",
+        "required": false
+      }
+    ],
+    "name": "ban",
+    "description": "Disable a user from using the bot.",
+    "type": 1
+  },
+  {
+    "options": [
+      {
+        "min_value": 1,
+        "type": 4,
+        "name": "page",
+        "description": "Page number (1-based)",
+        "required": false
+      }
+    ],
+    "name": "banlist",
+    "description": "List users disabled from using the bot.",
+    "type": 1
+  },
+  {
+    "options": [],
+    "name": "help",
+    "description": "Show all commands and prefix usage.",
+    "type": 1
+  },
+  {
+    "options": [
+      {
+        "type": 1,
+        "name": "show",
+        "description": "Show your inventory.",
+        "options": []
+      },
+      {
+        "type": 1,
+        "name": "use",
+        "description": "Use a consumable item.",
+        "options": [
+          {
+            "type": 3,
+            "name": "item",
+            "description": "Item name",
+            "required": true
+          },
+          {
+            "name": "target",
+            "description": "Optional party member target",
+            "required": false,
+            "type": 6
+          }
+        ]
+      },
+      {
+        "type": 1,
+        "name": "equip",
+        "description": "Equip a weapon from your inventory.",
+        "options": [
+          {
+            "type": 3,
+            "name": "weapon",
+            "description": "Weapon name",
+            "required": true
+          }
+        ]
+      },
+      {
+        "type": 1,
+        "name": "unequip",
+        "description": "Unequip your current weapon.",
+        "options": []
+      }
+    ],
+    "name": "inventory",
+    "description": "View and use items or equip weapons.",
+    "type": 1
+  },
+  {
+    "options": [
+      {
+        "type": 3,
+        "choices": [
+          {
+            "name": "Damage",
+            "value": "damage"
+          },
+          {
+            "name": "Level",
+            "value": "level"
+          },
+          {
+            "name": "Gold",
+            "value": "gold"
+          },
+          {
+            "name": "Time",
+            "value": "time"
+          },
+          {
+            "name": "Runs",
+            "value": "runs"
+          }
+        ],
+        "name": "type",
+        "description": "Ranking type",
+        "required": false
+      }
+    ],
+    "name": "leaderboard",
+    "description": "Show server Ambrosia rankings.",
+    "type": 1
+  },
+  {
+    "options": [
+      {
+        "type": 3,
+        "choices": [
+          {
+            "name": "refresh",
+            "value": "refresh"
+          }
+        ],
+        "name": "action",
+        "description": "Owner-only market actions",
+        "required": false
+      },
+      {
+        "min_value": 1,
+        "type": 4,
+        "name": "id",
+        "description": "Listing id to buy",
+        "required": false
+      },
+      {
+        "max_value": 99,
+        "min_value": 1,
+        "type": 4,
+        "name": "page",
+        "description": "Market page number",
+        "required": false
+      }
+    ],
+    "name": "market",
+    "description": "View the timed market or buy items.",
+    "type": 1
+  },
+  {
+    "options": [
+      {
+        "type": 1,
+        "name": "set",
+        "description": "Assign a staff role to a user.",
+        "options": [
+          {
+            "type": 3,
+            "choices": [
+              {
+                "name": "co-owner",
+                "value": "co-owner"
+              },
+              {
+                "name": "admin",
+                "value": "admin"
+              },
+              {
+                "name": "mod",
+                "value": "mod"
+              },
+              {
+                "name": "staff",
+                "value": "staff"
+              },
+              {
+                "name": "admin support",
+                "value": "admin-support"
+              },
+              {
+                "name": "mod support",
+                "value": "mod-support"
+              },
+              {
+                "name": "staff support",
+                "value": "staff-support"
+              }
+            ],
+            "name": "role",
+            "description": "Role to assign",
+            "required": true
+          },
+          {
+            "name": "user",
+            "description": "User to assign",
+            "required": true,
+            "type": 6
+          }
+        ]
+      },
+      {
+        "type": 1,
+        "name": "remove",
+        "description": "Remove a staff role from a user.",
+        "options": [
+          {
+            "name": "user",
+            "description": "User to remove",
+            "required": true,
+            "type": 6
+          }
+        ]
+      }
+    ],
+    "name": "mod",
+    "description": "Owner-only: set or remove a staff role for a user.",
+    "default_member_permissions": "32",
+    "type": 1
+  },
+  {
+    "options": [],
+    "name": "modlist",
+    "description": "List staff roles.",
+    "type": 1
+  },
+  {
+    "options": [],
+    "name": "ping",
+    "description": "Show bot latency and your playtime.",
+    "type": 1
+  },
+  {
+    "options": [
+      {
+        "name": "user",
+        "description": "User to view (optional)",
+        "required": false,
+        "type": 6
+      }
+    ],
+    "name": "profile",
+    "description": "Show player profile stats.",
+    "type": 1
+  },
+  {
+    "options": [],
+    "name": "rank",
+    "description": "Show rank tiers (low to high).",
+    "type": 1
+  },
+  {
+    "options": [],
+    "name": "rules",
+    "description": "Show the server rules for Ambrosia.",
+    "type": 1
+  },
+  {
+    "options": [
+      {
+        "type": 3,
+        "choices": [
+          {
+            "name": "item",
+            "value": "item"
+          },
+          {
+            "name": "weapon",
+            "value": "weapon"
+          },
+          {
+            "name": "skills",
+            "value": "skills"
+          }
+        ],
+        "name": "menu",
+        "description": "Show shop menu category",
+        "required": false
+      },
+      {
+        "max_value": 99,
+        "min_value": 1,
+        "type": 4,
+        "name": "page",
+        "description": "Menu page number",
+        "required": false
+      },
+      {
+        "type": 3,
+        "name": "item",
+        "description": "Item name to buy",
+        "required": false
+      },
+      {
+        "max_value": 99,
+        "min_value": 1,
+        "type": 4,
+        "name": "quantity",
+        "description": "Quantity",
+        "required": false
+      }
+    ],
+    "name": "shop",
+    "description": "View or buy items from the shop.",
+    "type": 1
+  },
+  {
+    "options": [
+      {
+        "type": 3,
+        "choices": [
+          {
+            "name": "unban",
+            "value": "unban"
+          }
+        ],
+        "name": "action",
+        "description": "Owner action",
+        "required": false
+      },
+      {
+        "name": "user",
+        "description": "User to unban (owner only)",
+        "required": false,
+        "type": 6
+      }
+    ],
+    "name": "support",
+    "description": "Send a bug report, support request, or suggestion to the owner.",
+    "type": 1
+  },
+  {
+    "options": [
+      {
+        "type": 3,
+        "choices": [
+          {
+            "name": "coin",
+            "value": "coin"
+          },
+          {
+            "name": "item",
+            "value": "item"
+          }
+        ],
+        "name": "type",
+        "description": "Trade type",
+        "required": true
+      },
+      {
+        "name": "user",
+        "description": "Recipient",
+        "required": true,
+        "type": 6
+      },
+      {
+        "min_value": 1,
+        "type": 4,
+        "name": "amount",
+        "description": "Amount or quantity",
+        "required": false
+      },
+      {
+        "type": 3,
+        "name": "item",
+        "description": "Item name (for item trade)",
+        "required": false
+      }
+    ],
+    "name": "trade",
+    "description": "Trade coins or items with another player in your party.",
+    "type": 1
+  },
+  {
+    "options": [
+      {
+        "name": "user",
+        "description": "User to enable",
+        "required": true,
+        "type": 6
+      }
+    ],
+    "name": "unban",
+    "description": "Re-enable a user to use the bot.",
+    "type": 1
+  },
+  {
+    "options": [
+      {
+        "name": "user",
+        "description": "User to unverify (optional)",
+        "required": false,
+        "type": 6
+      }
+    ],
+    "name": "unverify",
+    "description": "Owner-only: remove a user from verified list.",
+    "default_member_permissions": "32",
+    "type": 1
+  },
+  {
+    "options": [
+      {
+        "name": "user",
+        "description": "User to verify (optional)",
+        "required": false,
+        "type": 6
+      },
+      {
+        "type": 3,
+        "name": "code",
+        "description": "6-digit code from the verify image",
+        "required": false
+      }
+    ],
+    "name": "verify",
+    "description": "Verify yourself with a code image, or owner-verify a user.",
+    "type": 1
+  }
+]
